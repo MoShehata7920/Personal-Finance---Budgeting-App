@@ -31,4 +31,9 @@ class AppStrings {
   static const String totalBudget = "Total Budget";
   static const String categoryBudgets = "Category Budgets";
   static const String spent = "Spent:";
+
+  // Settings Screen
+  static const String darkMode = "Dark Mode";
+  static const String aboutApp = "About App";
+  static const String logOut = "Logout";
 }

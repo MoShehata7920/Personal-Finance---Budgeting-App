@@ -10,4 +10,6 @@ class AppIcons {
   static const shoppingCart = Icons.shopping_cart;
   static const filter = IconlyBroken.filter;
   static const add = Icons.add;
+  static const mode = Icons.dark_mode;
+  static const info = Icons.info_outline;
 }

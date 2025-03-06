@@ -1,12 +1,95 @@
 import 'package:flutter/material.dart';
+import 'package:personal_finance/resources/icons_manager.dart';
+import 'package:personal_finance/resources/strings_manager.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: Text('Settings Screen')),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(AppStrings.settings),
+        centerTitle: true,
+      ),
+      body: ListView(
+        padding: const EdgeInsets.all(16.0),
+        children: [
+          Card(
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+            elevation: 4,
+            child: const Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Row(
+                children: [
+                  CircleAvatar(
+                    radius: 40,
+                    backgroundImage: AssetImage("assets/images/my_pic.jpg"),
+                  ),
+                  SizedBox(width: 16),
+                  Expanded(
+                    child: Text(
+                      "Mohamed Shehata Torky",
+                      maxLines: 2,
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          overflow: TextOverflow.ellipsis),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(height: 30),
+          _buildSettingsTile(
+            icon: AppIcons.mode,
+            title: AppStrings.darkMode,
+            trailing: Switch(
+                value: false,
+                onChanged: (val) {
+                  // TODO: Implement theme switch
+                }),
+          ),
+          const Divider(),
+          _buildSettingsTile(
+            icon: AppIcons.info,
+            title: AppStrings.aboutApp,
+            onTap: () {
+              // TODO: Navigate to About page
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.logout, color: Colors.red),
+            title: const Text(AppStrings.logOut,
+                style: TextStyle(
+                  color: Colors.red,
+                  fontWeight: FontWeight.bold,
+                )),
+            onTap: () {
+              // TODO: Implement logout
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildSettingsTile(
+      {required IconData icon,
+      required String title,
+      Widget? trailing,
+      VoidCallback? onTap}) {
+    return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      elevation: 3,
+      child: ListTile(
+        leading: Icon(icon, size: 28),
+        title: Text(title, style: const TextStyle(fontSize: 16)),
+        trailing: trailing,
+        onTap: onTap,
+      ),
     );
   }
 }
