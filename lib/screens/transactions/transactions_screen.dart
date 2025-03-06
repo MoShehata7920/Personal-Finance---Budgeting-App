@@ -6,7 +6,6 @@ class TransactionsScreen extends StatelessWidget {
   const TransactionsScreen({super.key});
 
   @override
-
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -31,7 +30,7 @@ class TransactionsScreen extends StatelessWidget {
         onPressed: () {
           // TODO: Implement add transaction functionality
         },
-        child: const Icon(Icons.add),
+        child: const Icon(AppIcons.add),
       ),
     );
   }

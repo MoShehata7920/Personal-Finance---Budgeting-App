@@ -26,4 +26,9 @@ class AppStrings {
   static const String fri = "Fri";
   static const String sat = "Sat";
   static const String sun = "Sun";
+
+  // Budget Screen
+  static const String totalBudget = "Total Budget";
+  static const String categoryBudgets = "Category Budgets";
+  static const String spent = "Spent:";
 }

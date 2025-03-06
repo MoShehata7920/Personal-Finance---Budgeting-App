@@ -9,4 +9,5 @@ class AppIcons {
   static const person = Icons.person;
   static const shoppingCart = Icons.shopping_cart;
   static const filter = IconlyBroken.filter;
+  static const add = Icons.add;
 }
