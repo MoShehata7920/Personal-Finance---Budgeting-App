@@ -6,6 +6,7 @@ class AppIcons {
   static const transactions = Icons.list_alt;
   static const budget = IconlyBroken.wallet;
   static const settings = IconlyBroken.setting;
-  static const person = IconlyBroken.paperPlus;
+  static const person = Icons.person;
   static const shoppingCart = Icons.shopping_cart;
+  static const filter = IconlyBroken.filter;
 }

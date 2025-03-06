@@ -36,13 +36,13 @@ class BottomNavBar extends StatelessWidget {
         );
       },
     );
-    
   }
+
   List<BottomNavigationBarItem> _navBarItems() {
     return [
       _buildNavBarItem(AppIcons.home, AppStrings.home),
       _buildNavBarItem(AppIcons.transactions, AppStrings.transactions),
-      _buildNavBarItem(AppIcons.budget, AppStrings.transactions),
+      _buildNavBarItem(AppIcons.budget, AppStrings.budget),
       _buildNavBarItem(AppIcons.settings, AppStrings.settings),
     ];
   }
