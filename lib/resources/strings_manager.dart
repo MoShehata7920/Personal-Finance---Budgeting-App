@@ -6,4 +6,10 @@ class AppStrings {
   // Splash Screen
   static const String developedBy = "Developed By";
   static const String mohamedShehata = "Mohamed Shehata Torky";
+
+  // Bottom Nav Bar
+  static const String home = "Home";
+  static const String transactions = "Transactions";
+  static const String budget = "Budget";
+  static const String settings = "Settings";
 }

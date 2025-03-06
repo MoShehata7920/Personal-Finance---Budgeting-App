@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:personal_finance/resources/strings_manager.dart';
-import 'package:personal_finance/screens/home/home_screen.dart';
+import 'package:personal_finance/screens/nav_bar/nav_bar.dart';
 import 'package:personal_finance/screens/splash/splash_screen.dart';
 
 class Routes {
   static const String splashRoute = '/';
-  static const String homeRoute = '/homeScreen';
+  static const String navBarRoute = '/navBarRoute';
 }
 
 class RouteGenerator {
@@ -14,8 +14,8 @@ class RouteGenerator {
       case Routes.splashRoute:
         return MaterialPageRoute(builder: (context) => const SplashScreen());
 
-      case Routes.homeRoute:
-        return MaterialPageRoute(builder: (context) => const HomeScreen());
+      case Routes.navBarRoute:
+        return MaterialPageRoute(builder: (context) => const BottomNavBar());
 
       default:
         return unDefinedRoute();
