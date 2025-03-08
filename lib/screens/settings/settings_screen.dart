@@ -1,5 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:personal_finance/manager/user/user_cubit.dart';
 import 'package:personal_finance/resources/icons_manager.dart';
+import 'package:personal_finance/resources/routes_manager.dart';
 import 'package:personal_finance/resources/strings_manager.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -7,6 +12,8 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final userCubit = context.watch<UserCubit>();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(AppStrings.settings),
@@ -19,20 +26,20 @@ class SettingsScreen extends StatelessWidget {
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
             elevation: 4,
-            child: const Padding(
-              padding: EdgeInsets.all(16.0),
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
               child: Row(
                 children: [
                   CircleAvatar(
                     radius: 40,
-                    backgroundImage: AssetImage("assets/images/my_pic.jpg"),
+                    backgroundImage: FileImage(File(userCubit.state.imagePath)),
                   ),
-                  SizedBox(width: 16),
+                  const SizedBox(width: 16),
                   Expanded(
                     child: Text(
-                      "Mohamed Shehata Torky",
+                      userCubit.state.name,
                       maxLines: 2,
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                           overflow: TextOverflow.ellipsis),
@@ -68,7 +75,8 @@ class SettingsScreen extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 )),
             onTap: () {
-              // TODO: Implement logout
+              context.read<UserCubit>().clearUserData();
+              Navigator.pushReplacementNamed(context, Routes.setUpRoute);
             },
           ),
         ],

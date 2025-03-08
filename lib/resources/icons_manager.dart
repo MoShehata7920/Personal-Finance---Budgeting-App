@@ -12,4 +12,5 @@ class AppIcons {
   static const add = Icons.add;
   static const mode = Icons.dark_mode;
   static const info = Icons.info_outline;
+  static const camera = IconlyBroken.camera;
 }

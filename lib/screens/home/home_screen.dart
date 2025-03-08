@@ -1,7 +1,10 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:personal_finance/manager/user/user_cubit.dart';
 
 import 'package:personal_finance/resources/icons_manager.dart';
+import 'package:personal_finance/resources/routes_manager.dart';
 import 'package:personal_finance/resources/strings_manager.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -9,14 +12,16 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final userCubit = context.watch<UserCubit>();
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text("${AppStrings.welcome} Torky"),
+        title: Text("${AppStrings.welcome} ${userCubit.state.name} "),
         actions: [
           IconButton(
             icon: const Icon(AppIcons.person),
             onPressed: () {
-              //todo: Navigate to profile/settings
+              Navigator.pushNamed(context, Routes.setUpRoute);
             },
           ),
         ],

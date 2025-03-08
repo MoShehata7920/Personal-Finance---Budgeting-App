@@ -15,6 +15,7 @@ class AppStrings {
 
   // Home Screen
   static const String welcome = "Welcome,";
+  static const String guest = "Guest";
   static const String totalBalance = "Total Balance";
   static const String recentTransactions = "Recent Transactions";
   static const String budgetOverview = "Budget Overview";
@@ -36,4 +37,11 @@ class AppStrings {
   static const String darkMode = "Dark Mode";
   static const String aboutApp = "About App";
   static const String logOut = "Logout";
+
+  // SetUp Screen
+  static const String pleaseEnterName = "Please enter your name and select a picture.";
+  static const String failedSAvingDatA = "Failed to save data. Please try again.";
+  static const String setUpProfile = "Setup Profile";
+  static const String enterName = "Enter your name";
+  static const String saveAndContinue = "Save & Continue";
 }
