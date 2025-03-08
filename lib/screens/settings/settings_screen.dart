@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:personal_finance/manager/theme_cubit/theme_cubit.dart';
 import 'package:personal_finance/manager/user/user_cubit.dart';
 import 'package:personal_finance/resources/icons_manager.dart';
 import 'package:personal_finance/resources/routes_manager.dart';
@@ -54,10 +55,18 @@ class SettingsScreen extends StatelessWidget {
             icon: AppIcons.mode,
             title: AppStrings.darkMode,
             trailing: Switch(
-                value: false,
+                value: context.watch<ThemeCubit>().state == ThemeMode.dark,
                 onChanged: (val) {
-                  // TODO: Implement theme switch
+                  context.read<ThemeCubit>().toggleTheme();
                 }),
+          ),
+          const Divider(),
+          _buildSettingsTile(
+            icon: AppIcons.budget,
+            title: AppStrings.budget,
+            onTap: () {
+              // TODO: Navigate to Budget Controller page
+            },
           ),
           const Divider(),
           _buildSettingsTile(

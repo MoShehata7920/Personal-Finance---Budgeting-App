@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:personal_finance/manager/bottom_nav/bottom_nav_cubit.dart';
+import 'package:personal_finance/manager/theme_cubit/theme_cubit.dart';
 import 'package:personal_finance/manager/user/user_cubit.dart';
 import 'package:personal_finance/resources/routes_manager.dart';
 
@@ -15,6 +16,9 @@ void main() {
         BlocProvider(
           create: (context) => UserCubit(),
         ),
+        BlocProvider(
+          create: (context) => ThemeCubit(),
+        ),
       ],
       child: const MyApp(),
     ),
@@ -26,10 +30,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      onGenerateRoute: RouteGenerator.getRoute,
-      initialRoute: Routes.splashRoute,
+    return BlocBuilder<ThemeCubit, ThemeMode>(
+      builder: (context, themeMode) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          themeMode: themeMode ,
+          theme: ThemeData.light(),
+          darkTheme: ThemeData.dark(),
+          onGenerateRoute: RouteGenerator.getRoute,
+          initialRoute: Routes.splashRoute,
+        );
+      },
     );
   }
 }

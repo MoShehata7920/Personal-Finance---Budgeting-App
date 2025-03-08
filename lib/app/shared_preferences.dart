@@ -1,8 +1,10 @@
+import 'dart:convert';
+
+import 'package:shared_preferences/shared_preferences.dart';
+
+import 'package:personal_finance/models/user_model.dart';
 import 'package:personal_finance/resources/assets_manager.dart';
 import 'package:personal_finance/resources/strings_manager.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'dart:convert';
-import 'package:personal_finance/models/user_model.dart';
 
 class SharedPreferencesHelper {
   static const String userKey = 'userData';

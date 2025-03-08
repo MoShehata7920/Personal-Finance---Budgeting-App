@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:personal_finance/manager/user/user_cubit.dart';
 
 import 'package:personal_finance/resources/icons_manager.dart';
-import 'package:personal_finance/resources/routes_manager.dart';
 import 'package:personal_finance/resources/strings_manager.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -17,14 +16,6 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("${AppStrings.welcome} ${userCubit.state.name} "),
-        actions: [
-          IconButton(
-            icon: const Icon(AppIcons.person),
-            onPressed: () {
-              Navigator.pushNamed(context, Routes.setUpRoute);
-            },
-          ),
-        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
