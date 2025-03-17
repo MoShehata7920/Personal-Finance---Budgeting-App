@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:personal_finance/manager/budget_cubit/budget_cubit.dart';
 import 'package:personal_finance/manager/budget_cubit/budget_state.dart';
 import 'package:personal_finance/models/category_model.dart';
+import 'package:personal_finance/resources/icons_manager.dart';
 import 'package:personal_finance/resources/routes_manager.dart';
 import 'package:personal_finance/resources/strings_manager.dart';
 
@@ -61,7 +62,7 @@ class CategoryScreen extends StatelessWidget {
         subtitle: Text(
             "${AppStrings.spent} \$${category.spentAmount.toStringAsFixed(2)} / \$${category.totalAmount.toStringAsFixed(2)}"),
         trailing: IconButton(
-          icon: const Icon(Icons.delete, color: Colors.red),
+          icon: const Icon(AppIcons.delete, color: Colors.red),
           onPressed: () {
             context.read<BudgetCubit>().deleteCategory(category.name);
           },

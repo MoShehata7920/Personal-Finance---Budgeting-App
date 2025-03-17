@@ -65,7 +65,7 @@ class SettingsScreen extends StatelessWidget {
             icon: AppIcons.budget,
             title: AppStrings.budget,
             onTap: () {
-              // TODO: Navigate to Budget Controller page
+              Navigator.pushNamed(context, Routes.budgetControlRoute);
             },
           ),
           const Divider(),

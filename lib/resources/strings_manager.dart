@@ -44,8 +44,12 @@ class AppStrings {
   static const String categories = "Categories";
   static const String categoryName = "Category Name";
   static const String selectIcon = "Select an Icon";
-  static const String pleaseEnterNameAndIcon = "Please enter a name and select an icon";
+  static const String pleaseEnterNameAndIcon =
+      "Please enter a name and select an icon";
   static const String noCategoryAvailable = "No categories available.";
+  static const String enterBudget = "Enter a budget";
+  static const String totalSpent = "Total Spent";
+  static const String resetBudget = "Reset the budget";
 
   // SetUp Screen
   static const String pleaseEnterName =
