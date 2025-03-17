@@ -13,4 +13,35 @@ class AppIcons {
   static const mode = Icons.dark_mode;
   static const info = Icons.info_outline;
   static const camera = IconlyBroken.camera;
+  static const category = IconlyBroken.category;
+
+  static List<IconData> categoriesIcons = [
+    Icons.shopping_cart,
+    Icons.fastfood, 
+    Icons.directions_car,
+    Icons.home, 
+    Icons.local_gas_station, 
+    Icons.medical_services,
+    Icons.movie, 
+    Icons.sports_soccer, 
+    Icons.music_note, 
+    Icons.games, 
+    Icons.flight,
+    Icons.restaurant, 
+    Icons.nightlife, 
+    Icons.school, 
+    Icons.laptop_mac, 
+    Icons.work,
+    Icons.menu_book, 
+    Icons.fitness_center, 
+    Icons.pets, 
+    Icons.coffee,
+    Icons.shopping_bag,
+    Icons.spa, 
+    Icons.volunteer_activism, 
+    Icons.attach_money, 
+    Icons.money_off, 
+    Icons.credit_card, 
+    Icons.account_balance,
+  ];
 }

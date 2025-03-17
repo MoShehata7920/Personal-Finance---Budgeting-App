@@ -36,11 +36,22 @@ class AppStrings {
   // Settings Screen
   static const String darkMode = "Dark Mode";
   static const String aboutApp = "About App";
+  static const String category = "Category";
   static const String logOut = "Logout";
 
+  // Sub Settings Screens
+  static const String addCategory = "Add Category";
+  static const String categories = "Categories";
+  static const String categoryName = "Category Name";
+  static const String selectIcon = "Select an Icon";
+  static const String pleaseEnterNameAndIcon = "Please enter a name and select an icon";
+  static const String noCategoryAvailable = "No categories available.";
+
   // SetUp Screen
-  static const String pleaseEnterName = "Please enter your name and select a picture.";
-  static const String failedSAvingDatA = "Failed to save data. Please try again.";
+  static const String pleaseEnterName =
+      "Please enter your name and select a picture.";
+  static const String failedSAvingDatA =
+      "Failed to save data. Please try again.";
   static const String setUpProfile = "Setup Profile";
   static const String enterName = "Enter your name";
   static const String saveAndContinue = "Save & Continue";

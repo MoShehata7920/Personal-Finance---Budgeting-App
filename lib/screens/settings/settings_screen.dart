@@ -70,6 +70,14 @@ class SettingsScreen extends StatelessWidget {
           ),
           const Divider(),
           _buildSettingsTile(
+            icon: AppIcons.category,
+            title: AppStrings.category,
+            onTap: () {
+              Navigator.pushNamed(context, Routes.categoryRoute);
+            },
+          ),
+          const Divider(),
+          _buildSettingsTile(
             icon: AppIcons.info,
             title: AppStrings.aboutApp,
             onTap: () {
