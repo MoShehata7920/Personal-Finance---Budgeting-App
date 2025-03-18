@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:personal_finance/manager/budget_cubit/budget_cubit.dart';
 import 'package:personal_finance/manager/budget_cubit/budget_state.dart';
-
 import 'package:personal_finance/models/budget_model.dart';
 import 'package:personal_finance/models/category_model.dart';
-
+import 'package:personal_finance/models/transactions_model.dart';
 import 'package:personal_finance/resources/strings_manager.dart';
 
 class BudgetScreen extends StatelessWidget {
@@ -70,11 +69,17 @@ class BudgetScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   LinearProgressIndicator(
-                    value: budget.totalSpent /
-                        (budget.totalBudget > 0 ? budget.totalBudget : 1),
+                    value: budget.totalBudget > 0
+                        ? (budget.totalSpent / budget.totalBudget)
+                            .clamp(0.0, 1.0)
+                        : 0,
                     backgroundColor: Colors.grey[300],
-                    color: Colors.green,
-                  ),
+                    color: budget.totalSpent / budget.totalBudget < 0.5
+                        ? Colors.green
+                        : budget.totalSpent / budget.totalBudget < 0.8
+                            ? Colors.orange
+                            : Colors.red,
+                  )
                 ],
               ),
             ),
@@ -83,31 +88,34 @@ class BudgetScreen extends StatelessWidget {
           const Text(AppStrings.categoryBudgets,
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
           const SizedBox(height: 10),
-          SizedBox(
-            height: 400,
-            child: ListView.builder(
-              itemCount: budget.categories.length,
-              itemBuilder: (context, index) {
-                final category = budget.categories[index];
-                return _buildBudgetCategory(category);
-              },
-            ),
+          ListView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: budget.categories.length,
+            itemBuilder: (context, index) {
+              final category = budget.categories[index];
+              return _buildBudgetCategory(
+                  category, budget.totalBudget, budget.transactions);
+            },
           ),
         ],
       ),
     );
   }
 
-  Widget _buildBudgetCategory(CategoryBudget category) {
-    final double progress = category.totalAmount > 0
-        ? (category.spentAmount / category.totalAmount)
-        : 0;
+  Widget _buildBudgetCategory(CategoryBudget category, double overallBudget,
+      List<TransactionModel> transactions) {
+    final double progress =
+        overallBudget > 0 ? (category.spentAmount / overallBudget) : 0;
     final int progressPercentage = (progress * 100).toInt();
+
+    final List<TransactionModel> categoryTransactions =
+        transactions.where((t) => t.categoryName == category.name).toList();
 
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       elevation: 3,
-      child: ListTile(
+      child: ExpansionTile(
         leading: SizedBox(
           width: 50,
           height: 50,
@@ -115,7 +123,7 @@ class BudgetScreen extends StatelessWidget {
             fit: StackFit.expand,
             children: [
               CircularProgressIndicator(
-                value: progress,
+                value: progress.clamp(0.0, 1.0),
                 backgroundColor: Colors.grey[300],
                 color: progress >= 1.0 ? Colors.red : Colors.green,
                 strokeWidth: 5,
@@ -132,6 +140,21 @@ class BudgetScreen extends StatelessWidget {
             style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
         subtitle: Text(
             "${AppStrings.spent} \$${category.spentAmount.toStringAsFixed(2)} / \$${category.totalAmount.toStringAsFixed(2)}"),
+        children: categoryTransactions.isNotEmpty
+            ? categoryTransactions.map((transaction) {
+                return ListTile(
+                  title: Text("\$${transaction.amount.toStringAsFixed(2)}"),
+                  subtitle: Text(
+                      "${transaction.date.toLocal()}${transaction.note != null ? " - ${transaction.note}" : ""}"),
+                );
+              }).toList()
+            : [
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(AppStrings.noTransactionsAvailable,
+                      textAlign: TextAlign.center),
+                )
+              ],
       ),
     );
   }

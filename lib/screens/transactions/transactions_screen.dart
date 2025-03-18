@@ -72,20 +72,33 @@ class _TransactionsScreenState extends State<TransactionsScreen> {
         ElevatedButton(
           onPressed: () {
             final double? amount = double.tryParse(_amountController.text);
-            if (_selectedCategory != null && amount != null && amount > 0) {
-              final transaction = TransactionModel(
-                id: const Uuid().v4(),
-                categoryName: _selectedCategory!,
-                amount: amount,
-                date: DateTime.now(),
-                note: _noteController.text,
-              );
-              context.read<BudgetCubit>().addTransaction(transaction);
-              _amountController.clear();
-              _noteController.clear();
-              setState(() {
-                _selectedCategory = null;
-              });
+            final budgetState = context.read<BudgetCubit>().state;
+            if (budgetState is BudgetLoaded &&
+                _selectedCategory != null &&
+                amount != null &&
+                amount > 0) {
+              final currentBudget = budgetState.budget;
+              if (currentBudget.totalSpent + amount >
+                  currentBudget.totalBudget) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                      content: Text(AppStrings.transactionExceedTotalBudget)),
+                );
+              } else {
+                final transaction = TransactionModel(
+                  id: const Uuid().v4(),
+                  categoryName: _selectedCategory!,
+                  amount: amount,
+                  date: DateTime.now(),
+                  note: _noteController.text,
+                );
+                context.read<BudgetCubit>().addTransaction(transaction);
+                _amountController.clear();
+                _noteController.clear();
+                setState(() {
+                  _selectedCategory = null;
+                });
+              }
             }
           },
           child: const Text(AppStrings.addTransaction),

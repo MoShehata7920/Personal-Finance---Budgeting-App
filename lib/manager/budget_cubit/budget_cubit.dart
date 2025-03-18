@@ -65,24 +65,22 @@ class BudgetCubit extends Cubit<BudgetState> {
       if (state is BudgetLoaded) {
         final budget = (state as BudgetLoaded).budget;
 
-        final categories = budget.categories.map((category) {
+        final updatedCategories = budget.categories.map((category) {
           if (category.name == transaction.categoryName) {
-            return category.copyWith(
-              spentAmount: category.spentAmount + transaction.amount,
-            );
+            final newSpentAmount = category.spentAmount + transaction.amount;
+            return category.copyWith(spentAmount: newSpentAmount);
           }
           return category;
         }).toList();
 
-        // Update budget
         final updatedBudget = budget.copyWith(
           totalSpent: budget.totalSpent + transaction.amount,
-          categories: categories,
+          categories: updatedCategories,
           transactions: [...budget.transactions, transaction],
         );
 
-        await SharedPreferencesHelper.saveBudgetData(updatedBudget);
         emit(BudgetLoaded(updatedBudget));
+        await SharedPreferencesHelper.saveBudgetData(updatedBudget);
       }
     } catch (e) {
       emit(BudgetError("Failed to add transaction"));

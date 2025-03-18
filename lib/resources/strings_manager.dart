@@ -65,4 +65,6 @@ class AppStrings {
   static const String amount = "Amount";
   static const String note = "Note";
   static const String addTransaction = "Add Transaction";
+  static const String noTransactionsAvailable = "No transactions available.";
+  static const String transactionExceedTotalBudget = "This transaction would exceed your total budget.";
 }
