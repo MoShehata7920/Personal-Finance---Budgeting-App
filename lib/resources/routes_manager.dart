@@ -5,6 +5,7 @@ import 'package:personal_finance/manager/budget_cubit/budget_state.dart';
 import 'package:personal_finance/resources/strings_manager.dart';
 import 'package:personal_finance/screens/nav_bar/nav_bar.dart';
 import 'package:personal_finance/screens/set_up/set_up_screen.dart';
+import 'package:personal_finance/screens/settings/sub_settings_screens/about/about_screen.dart';
 import 'package:personal_finance/screens/settings/sub_settings_screens/budget_control/budget_control_screen.dart';
 import 'package:personal_finance/screens/settings/sub_settings_screens/category_screen/add_category_screen/add_category_screen.dart';
 import 'package:personal_finance/screens/settings/sub_settings_screens/category_screen/category_screen.dart';
@@ -17,6 +18,7 @@ class Routes {
   static const String categoryRoute = '/categoryRoute';
   static const String addCategoryRoute = '/addCategoryRoute';
   static const String budgetControlRoute = '/budgetControlRoute';
+  static const String aboutRoute = '/aboutRoute';
 }
 
 class RouteGenerator {
@@ -57,6 +59,9 @@ class RouteGenerator {
       case Routes.budgetControlRoute:
         return MaterialPageRoute(
             builder: (context) => const BudgetControlScreen());
+
+      case Routes.aboutRoute:
+        return MaterialPageRoute(builder: (context) => const AboutScreen());
 
       default:
         return unDefinedRoute();

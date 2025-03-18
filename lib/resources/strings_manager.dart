@@ -1,4 +1,19 @@
 class AppStrings {
+  // App Name
+  static const String appName = "Budget Master";
+  static const String appVersion = "Version 1.0.0";
+  static const String appDescription =
+      "Budget Master is a simple and intuitive budgeting app designed to help you track your expenses, manage your budget, and take control of your financial future.";
+  static const String contact = "Contact";
+  static const String myGmail = "mshehata065@gmail.com";
+  static const String gitHub = "GitHub";
+  static const String myGitHub = "https://github.com/MoShehata7920";
+  static const String instagram = "Instagram";
+  static const String myInstagram =
+      "https://www.instagram.com/Mohamed_shehata7920/";
+  static const String facebook = "facebook";
+  static const String myFacebook = "https://www.facebook.com/mohamed.elgarf.7";
+
   // String keys (for reference)
   static const String noRouteTitle = 'No Route Title';
   static const String noRouteFound = 'No Route Found';

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class AppIcons {
   static const home = IconlyBroken.home;
@@ -47,4 +48,9 @@ class AppIcons {
 
   static const delete = IconlyBroken.delete;
   static const edit = IconlyBroken.edit;
+  static const logout = IconlyBroken.logout;
+  static const email = Icons.email_outlined;
+  static const github = FontAwesomeIcons.github;
+  static const instagram = FontAwesomeIcons.instagram;
+  static const facebook = FontAwesomeIcons.facebook;
 }

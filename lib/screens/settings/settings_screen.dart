@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:personal_finance/manager/budget_cubit/budget_cubit.dart';
 import 'package:personal_finance/manager/theme_cubit/theme_cubit.dart';
 import 'package:personal_finance/manager/user/user_cubit.dart';
 import 'package:personal_finance/resources/icons_manager.dart';
@@ -81,11 +82,11 @@ class SettingsScreen extends StatelessWidget {
             icon: AppIcons.info,
             title: AppStrings.aboutApp,
             onTap: () {
-              // TODO: Navigate to About page
+              Navigator.pushNamed(context, Routes.aboutRoute);
             },
           ),
           ListTile(
-            leading: const Icon(Icons.logout, color: Colors.red),
+            leading: const Icon(AppIcons.logout, color: Colors.red),
             title: const Text(AppStrings.logOut,
                 style: TextStyle(
                   color: Colors.red,
@@ -93,6 +94,7 @@ class SettingsScreen extends StatelessWidget {
                 )),
             onTap: () {
               context.read<UserCubit>().clearUserData();
+              context.read<BudgetCubit>().resetBudget();
               Navigator.pushReplacementNamed(context, Routes.setUpRoute);
             },
           ),
