@@ -5,6 +5,7 @@ import 'package:personal_finance/manager/budget_cubit/budget_state.dart';
 import 'package:personal_finance/models/budget_model.dart';
 import 'package:personal_finance/models/category_model.dart';
 import 'package:personal_finance/models/transactions_model.dart';
+import 'package:personal_finance/resources/icons_manager.dart';
 import 'package:personal_finance/resources/strings_manager.dart';
 
 class BudgetScreen extends StatelessWidget {
@@ -24,7 +25,7 @@ class BudgetScreen extends StatelessWidget {
             if (state is BudgetInitial) {
               return const Center(child: CircularProgressIndicator());
             } else if (state is BudgetLoaded) {
-              return _buildBudgetView(state.budget);
+              return _buildBudgetView(context, state.budget);
             } else if (state is BudgetError) {
               return Center(child: Text(state.message));
             }
@@ -35,7 +36,7 @@ class BudgetScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildBudgetView(BudgetModel budget) {
+  Widget _buildBudgetView(BuildContext context, BudgetModel budget) {
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -95,7 +96,7 @@ class BudgetScreen extends StatelessWidget {
             itemBuilder: (context, index) {
               final category = budget.categories[index];
               return _buildBudgetCategory(
-                  category, budget.totalBudget, budget.transactions);
+                  context, category, budget.totalBudget, budget.transactions);
             },
           ),
         ],
@@ -103,8 +104,8 @@ class BudgetScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildBudgetCategory(CategoryBudget category, double overallBudget,
-      List<TransactionModel> transactions) {
+  Widget _buildBudgetCategory(BuildContext context, CategoryBudget category,
+      double overallBudget, List<TransactionModel> transactions) {
     final double progress =
         overallBudget > 0 ? (category.spentAmount / overallBudget) : 0;
     final int progressPercentage = (progress * 100).toInt();
@@ -146,6 +147,23 @@ class BudgetScreen extends StatelessWidget {
                   title: Text("\$${transaction.amount.toStringAsFixed(2)}"),
                   subtitle: Text(
                       "${transaction.date.toLocal()}${transaction.note != null ? " - ${transaction.note}" : ""}"),
+                  trailing: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      IconButton(
+                        icon: const Icon(AppIcons.edit, color: Colors.blue),
+                        onPressed: () => _editTransaction(context, transaction),
+                      ),
+                      IconButton(
+                        icon: const Icon(AppIcons.delete, color: Colors.red),
+                        onPressed: () {
+                          context
+                              .read<BudgetCubit>()
+                              .deleteTransaction(transaction.id);
+                        },
+                      ),
+                    ],
+                  ),
                 );
               }).toList()
             : [
@@ -156,6 +174,62 @@ class BudgetScreen extends StatelessWidget {
                 )
               ],
       ),
+    );
+  }
+
+  void _editTransaction(BuildContext context, TransactionModel transaction) {
+    final TextEditingController amountController =
+        TextEditingController(text: transaction.amount.toString());
+    final TextEditingController noteController =
+        TextEditingController(text: transaction.note ?? "");
+
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text(AppStrings.editTransactions),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextField(
+                controller: amountController,
+                keyboardType: TextInputType.number,
+                decoration: const InputDecoration(labelText: AppStrings.amount),
+              ),
+              TextField(
+                controller: noteController,
+                decoration: const InputDecoration(labelText: AppStrings.note),
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text(AppStrings.cancel),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                final double? newAmount =
+                    double.tryParse(amountController.text);
+                if (newAmount != null && newAmount > 0) {
+                  final updatedTransaction = TransactionModel(
+                    id: transaction.id,
+                    categoryName: transaction.categoryName,
+                    amount: newAmount,
+                    date: transaction.date,
+                    note: noteController.text,
+                  );
+                  context
+                      .read<BudgetCubit>()
+                      .updateTransaction(updatedTransaction);
+                  Navigator.pop(context);
+                }
+              },
+              child: const Text(AppStrings.save),
+            ),
+          ],
+        );
+      },
     );
   }
 }

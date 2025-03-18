@@ -32,6 +32,9 @@ class AppStrings {
   static const String totalBudget = "Total Budget";
   static const String categoryBudgets = "Category Budgets";
   static const String spent = "Spent:";
+  static const String editTransactions = "Edit Transaction";
+  static const String cancel = "Cancel";
+  static const String save = "Save";
 
   // Settings Screen
   static const String darkMode = "Dark Mode";
@@ -66,5 +69,6 @@ class AppStrings {
   static const String note = "Note";
   static const String addTransaction = "Add Transaction";
   static const String noTransactionsAvailable = "No transactions available.";
-  static const String transactionExceedTotalBudget = "This transaction would exceed your total budget.";
+  static const String transactionExceedTotalBudget =
+      "This transaction would exceed your total budget.";
 }

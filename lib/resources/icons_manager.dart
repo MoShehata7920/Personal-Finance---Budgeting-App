@@ -46,4 +46,5 @@ class AppIcons {
   ];
 
   static const delete = IconlyBroken.delete;
+  static const edit = IconlyBroken.edit;
 }

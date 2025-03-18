@@ -86,4 +86,72 @@ class BudgetCubit extends Cubit<BudgetState> {
       emit(BudgetError("Failed to add transaction"));
     }
   }
+
+  void deleteTransaction(String transactionId) async {
+    try {
+      if (state is BudgetLoaded) {
+        final budget = (state as BudgetLoaded).budget;
+
+        final updatedTransactions =
+            budget.transactions.where((t) => t.id != transactionId).toList();
+
+        final updatedTotalSpent =
+            updatedTransactions.fold<double>(0.0, (sum, t) => sum + t.amount);
+
+        final updatedCategories = budget.categories.map((category) {
+          final removedAmount = budget.transactions
+              .where((t) =>
+                  t.id == transactionId && t.categoryName == category.name)
+              .fold<double>(0.0, (sum, t) => sum + t.amount);
+
+          return category.copyWith(
+            spentAmount: category.spentAmount - removedAmount,
+          );
+        }).toList();
+
+        final updatedBudget = budget.copyWith(
+          totalSpent: updatedTotalSpent,
+          transactions: updatedTransactions,
+          categories: updatedCategories,
+        );
+
+        await SharedPreferencesHelper.saveBudgetData(updatedBudget);
+        emit(BudgetLoaded(updatedBudget));
+      }
+    } catch (e) {
+      emit(BudgetError("Failed to delete transaction"));
+    }
+  }
+
+  void updateTransaction(TransactionModel updatedTransaction) async {
+    try {
+      if (state is BudgetLoaded) {
+        final budget = (state as BudgetLoaded).budget;
+        final updatedTransactions = budget.transactions.map((t) {
+          return t.id == updatedTransaction.id ? updatedTransaction : t;
+        }).toList();
+
+        final updatedTotalSpent =
+            updatedTransactions.fold<double>(0.0, (sum, t) => sum + t.amount);
+
+        final updatedCategories = budget.categories.map((category) {
+          final newSpent = updatedTransactions
+              .where((t) => t.categoryName == category.name)
+              .fold<double>(0.0, (sum, t) => sum + t.amount);
+          return category.copyWith(spentAmount: newSpent);
+        }).toList();
+
+        final updatedBudget = budget.copyWith(
+          totalSpent: updatedTotalSpent,
+          transactions: updatedTransactions,
+          categories: updatedCategories,
+        );
+
+        await SharedPreferencesHelper.saveBudgetData(updatedBudget);
+        emit(BudgetLoaded(updatedBudget));
+      }
+    } catch (e) {
+      emit(BudgetError("Failed to update transaction"));
+    }
+  }
 }
