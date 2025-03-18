@@ -59,4 +59,10 @@ class AppStrings {
   static const String setUpProfile = "Setup Profile";
   static const String enterName = "Enter your name";
   static const String saveAndContinue = "Save & Continue";
+
+  // Transitions Screen
+  static const String selectCategory = "Select Category";
+  static const String amount = "Amount";
+  static const String note = "Note";
+  static const String addTransaction = "Add Transaction";
 }

@@ -15,6 +15,20 @@ class CategoryBudget {
 
   IconData get icon => IconData(iconCode, fontFamily: 'MaterialIcons');
 
+  CategoryBudget copyWith({
+    String? name,
+    int? iconCode,
+    double? totalAmount,
+    double? spentAmount,
+  }) {
+    return CategoryBudget(
+      name: name ?? this.name,
+      iconCode: iconCode ?? this.iconCode,
+      totalAmount: totalAmount ?? this.totalAmount,
+      spentAmount: spentAmount ?? this.spentAmount,
+    );
+  }
+
   Map<String, dynamic> toJson() => {
         'name': name,
         'totalAmount': totalAmount,

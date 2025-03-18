@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:personal_finance/app/shared_preferences.dart';
 import 'package:personal_finance/models/budget_model.dart';
+import 'package:personal_finance/models/transactions_model.dart';
 import 'budget_state.dart';
 
 class BudgetCubit extends Cubit<BudgetState> {
@@ -11,15 +12,11 @@ class BudgetCubit extends Cubit<BudgetState> {
   Future<void> loadBudgetData() async {
     try {
       BudgetModel? budget = await SharedPreferencesHelper.getBudgetData();
-
-      if (budget != null) {
-        emit(BudgetLoaded(budget));
-      } else {
-        emit(BudgetLoaded(
-            BudgetModel(totalBudget: 0, totalSpent: 0, categories: [])));
-      }
+      budget ??= BudgetModel(
+          totalBudget: 0, totalSpent: 0, categories: [], transactions: []);
+      emit(BudgetLoaded(budget));
     } catch (e) {
-      emit(BudgetError("Failed to load budget data"));
+      emit(BudgetError("Failed to load budget data: ${e.toString()}"));
     }
   }
 
@@ -60,6 +57,35 @@ class BudgetCubit extends Cubit<BudgetState> {
       }
     } catch (e) {
       emit(BudgetError("Failed to delete category"));
+    }
+  }
+
+  void addTransaction(TransactionModel transaction) async {
+    try {
+      if (state is BudgetLoaded) {
+        final budget = (state as BudgetLoaded).budget;
+
+        final categories = budget.categories.map((category) {
+          if (category.name == transaction.categoryName) {
+            return category.copyWith(
+              spentAmount: category.spentAmount + transaction.amount,
+            );
+          }
+          return category;
+        }).toList();
+
+        // Update budget
+        final updatedBudget = budget.copyWith(
+          totalSpent: budget.totalSpent + transaction.amount,
+          categories: categories,
+          transactions: [...budget.transactions, transaction],
+        );
+
+        await SharedPreferencesHelper.saveBudgetData(updatedBudget);
+        emit(BudgetLoaded(updatedBudget));
+      }
+    } catch (e) {
+      emit(BudgetError("Failed to add transaction"));
     }
   }
 }

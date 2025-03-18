@@ -59,7 +59,7 @@ class SharedPreferencesHelper {
 
   static Future<BudgetModel?> getBudgetData() async {
     final prefs = await SharedPreferences.getInstance();
-    String? budgetJson = prefs.getString(budgetKey);
+    final String? budgetJson = prefs.getString(budgetKey);
     if (budgetJson != null) {
       return BudgetModel.fromJson(jsonDecode(budgetJson));
     }

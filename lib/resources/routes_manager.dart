@@ -36,18 +36,22 @@ class RouteGenerator {
 
       case Routes.addCategoryRoute:
         return MaterialPageRoute(
-          builder: (context) => AddCategoryScreen(
-            onCategoryAdded: (newCategory) {
-              final budgetCubit = context.read<BudgetCubit>();
-              final currentBudget = (budgetCubit.state as BudgetLoaded).budget;
-
-              final updatedBudget = currentBudget.copyWith(
-                categories: [...currentBudget.categories, newCategory],
-              );
-
-              budgetCubit.updateBudget(updatedBudget);
-            },
-          ),
+          builder: (context) {
+            final budgetCubit = context.read<BudgetCubit>();
+            return BlocProvider.value(
+              value: budgetCubit,
+              child: AddCategoryScreen(
+                onCategoryAdded: (newCategory) {
+                  final currentBudget =
+                      (budgetCubit.state as BudgetLoaded).budget;
+                  final updatedBudget = currentBudget.copyWith(
+                    categories: [...currentBudget.categories, newCategory],
+                  );
+                  budgetCubit.updateBudget(updatedBudget);
+                },
+              ),
+            );
+          },
         );
 
       case Routes.budgetControlRoute:
