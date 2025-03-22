@@ -6,22 +6,29 @@ A **Flutter-based** personal finance and budgeting app to track expenses, set bu
 
 ## 📸 Screenshots  
 
-| Home Screen | Budget Overview | Transactions | Profile |
-|-------------|---------------|-------------|
+Take a look at the app’s key screens:  
+
+### 🌟 **Main Features**  
+
+| 🏠 Home Screen | 📊 Budget Overview | 📜 Transactions | 👤 Profile |
+|---------------|-------------------|----------------|-----------|
 | ![Home](screenshots/home_screen.jpg) | ![Budget](screenshots/budget_screen.jpg) | ![Transactions](screenshots/transactions_screen.jpg) | ![Profile](screenshots/profile_screen.jpg) |
 
-| Add Category | Categories | Edit Budget |
-|-------------|---------------|-------------|
-| ![AddCategory](screenshots/add_category.jpg) | ![Categories](screenshots/categories_screen.jpg) | ![EditBudget](screenshots/edit_budget_screen.jpg) |
+### 🔧 **Budget & Categories Management**  
+
+| ➕ Add Category | 📂 Categories List | ✏️ Edit Budget |
+|----------------|------------------|--------------|
+| ![Add Category](screenshots/add_category.jpg) | ![Categories](screenshots/categories_screen.jpg) | ![Edit Budget](screenshots/edit_budget_screen.jpg) |
+
 ---
 
 ## ✨ Features  
-✔️ **Track Income & Expenses** – Log transactions easily.  
-✔️ **Budget Categories** – Organize expenses into categories.  
+✔️ **Track Income & Expenses** – Log transactions quickly & efficiently.  
+✔️ **Budget Categories** – Organize spending with custom categories.  
 ✔️ **Transaction History** – View and manage past transactions.  
-✔️ **Spending Trends** – Graphs & insights into your spending.  
-✔️ **Multi-language Support** – Supports **English & Arabic**.  
-✔️ **Dark & Light Mode** – Customizable theme settings.  
+✔️ **Spending Trends** – Gain insights with graphs & analytics.  
+✔️ **Multi-language Support** – Available in **English & Arabic**.  
+✔️ **Dark & Light Mode** – Choose your preferred theme.  
 
 ---
 
@@ -36,22 +43,27 @@ A **Flutter-based** personal finance and budgeting app to track expenses, set bu
 
 ## 🚀 Installation  
 
-1️⃣ **Clone the repository:**  
+Follow these steps to set up and run the app:  
+
+### 1️⃣ **Clone the Repository**  
 ```bash
 git clone https://github.com/MoShehata7920/Personal-Finance---Budgeting-App.git
+```
 
-2️⃣ ** Navigate to the project directory:**  
+### 2️⃣ Navigate to the Project Directory
 ```bash
-cd your-repo
+cd cd Personal-Finance---Budgeting-App
+```
 
-3️⃣ ** Install dependencies:**  
+### 3️⃣ ** Install dependencies:**  
 ```bash
 flutter pub get
+```
 
-4️⃣ ** Run the app:**  
+### 4️⃣ ** Run the app:**  
 ```bash
 flutter run
----
+```
 
 ## 📌 Usage
 -1️⃣ Set your initial budget 📊
