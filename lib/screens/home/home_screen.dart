@@ -164,8 +164,20 @@ class HomeScreen extends StatelessWidget {
   }
 
   Widget _buildTransactionList(BudgetModel budget) {
+    if (budget.transactions.isEmpty) {
+      return const Center(
+        child: Text(
+          AppStrings.noTransactionsAvailable,
+          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        ),
+      );
+    }
+
+    final sortedTransactions = budget.transactions
+      ..sort((a, b) => b.date.compareTo(a.date));
+
     return Column(
-      children: budget.transactions.take(3).map((transaction) {
+      children: sortedTransactions.take(3).map((transaction) {
         return Card(
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),

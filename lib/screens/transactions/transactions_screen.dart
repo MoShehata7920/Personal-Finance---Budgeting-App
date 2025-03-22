@@ -112,7 +112,11 @@ class _TransactionsScreenState extends State<TransactionsScreen> {
           child: ListView.builder(
             itemCount: budget.transactions.length,
             itemBuilder: (context, index) {
-              final transaction = budget.transactions[index];
+              final sortedTransactions = budget.transactions
+                ..sort((a, b) => b.date.compareTo(a.date));
+
+              final transaction = sortedTransactions[index];
+
               return ListTile(
                 title: Text(transaction.categoryName),
                 subtitle: Text(
