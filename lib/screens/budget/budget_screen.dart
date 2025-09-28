@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:personal_finance/banner_ads.dart';
 import 'package:personal_finance/manager/budget_cubit/budget_cubit.dart';
 import 'package:personal_finance/manager/budget_cubit/budget_state.dart';
 import 'package:personal_finance/models/budget_model.dart';
@@ -33,12 +34,14 @@ class BudgetScreen extends StatelessWidget {
           },
         ),
       ),
+      bottomNavigationBar: const BannerAdWidget(), // Move banner to bottom
     );
   }
 
   Widget _buildBudgetView(BuildContext context, BudgetModel budget) {
     return SingleChildScrollView(
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Card(

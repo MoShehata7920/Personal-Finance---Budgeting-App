@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:personal_finance/banner_ads.dart';
 import 'package:uuid/uuid.dart';
 
 import 'package:personal_finance/manager/budget_cubit/budget_cubit.dart';
@@ -36,6 +37,7 @@ class _TransactionsScreenState extends State<TransactionsScreen> {
           },
         ),
       ),
+      bottomNavigationBar: const BannerAdWidget(),
     );
   }
 
