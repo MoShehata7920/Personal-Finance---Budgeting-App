@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:personal_finance/core/resources/strings_manager.dart';
-import 'package:personal_finance/features/home/presentation/view/widgets/balance_card.dart';
-import 'package:personal_finance/features/home/presentation/view/widgets/budget_progress.dart';
-import 'package:personal_finance/features/home/presentation/view/widgets/section_title.dart';
-import 'package:personal_finance/features/home/presentation/view/widgets/spending_chart.dart';
-import 'package:personal_finance/features/home/presentation/view/widgets/transactions_list.dart';
-import 'package:personal_finance/features/budget/presentation/manager/budget_cubit.dart';
-import 'package:personal_finance/features/budget/presentation/manager/budget_state.dart';
+import 'package:budget_master/core/resources/strings_manager.dart';
+import 'package:budget_master/features/home/presentation/view/widgets/balance_card.dart';
+import 'package:budget_master/features/home/presentation/view/widgets/budget_progress.dart';
+import 'package:budget_master/features/home/presentation/view/widgets/section_title.dart';
+import 'package:budget_master/features/home/presentation/view/widgets/spending_chart.dart';
+import 'package:budget_master/features/home/presentation/view/widgets/transactions_list.dart';
+import 'package:budget_master/features/budget/presentation/manager/budget_cubit.dart';
+import 'package:budget_master/features/budget/presentation/manager/budget_state.dart';
 
 class HomeScreenBody extends StatelessWidget {
   const HomeScreenBody({super.key});

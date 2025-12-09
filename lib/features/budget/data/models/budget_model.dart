@@ -1,5 +1,5 @@
-import 'package:personal_finance/features/category/data/models/category_model.dart';
-import 'package:personal_finance/features/transactions/data/models/transactions_model.dart';
+import 'package:budget_master/features/category/data/models/category_model.dart';
+import 'package:budget_master/features/transactions/data/models/transactions_model.dart';
 
 class BudgetModel {
   final double totalBudget;

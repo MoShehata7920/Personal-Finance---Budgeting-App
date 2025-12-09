@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:personal_finance/core/resources/icons_manager.dart';
-import 'package:personal_finance/core/resources/strings_manager.dart';
-import 'package:personal_finance/core/services/functions.dart';
-import 'package:personal_finance/features/budget/presentation/manager/budget_cubit.dart';
-import 'package:personal_finance/features/category/data/models/category_model.dart';
-import 'package:personal_finance/features/transactions/data/models/transactions_model.dart';
+import 'package:budget_master/core/resources/icons_manager.dart';
+import 'package:budget_master/core/resources/strings_manager.dart';
+import 'package:budget_master/core/services/functions.dart';
+import 'package:budget_master/features/budget/presentation/manager/budget_cubit.dart';
+import 'package:budget_master/features/category/data/models/category_model.dart';
+import 'package:budget_master/features/transactions/data/models/transactions_model.dart';
 
 class BudgetCategory extends StatelessWidget {
   final CategoryBudget category;

@@ -3,11 +3,11 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:personal_finance/core/resources/icons_manager.dart';
-import 'package:personal_finance/core/resources/routes_manager.dart';
-import 'package:personal_finance/core/resources/strings_manager.dart';
-import 'package:personal_finance/features/set_up_user/data/models/user_model.dart';
-import 'package:personal_finance/features/set_up_user/presentation/manager/user_cubit.dart';
+import 'package:budget_master/core/resources/icons_manager.dart';
+import 'package:budget_master/core/resources/routes_manager.dart';
+import 'package:budget_master/core/resources/strings_manager.dart';
+import 'package:budget_master/features/set_up_user/data/models/user_model.dart';
+import 'package:budget_master/features/set_up_user/presentation/manager/user_cubit.dart';
 
 class SetUpScreenBody extends StatefulWidget {
   const SetUpScreenBody({super.key});

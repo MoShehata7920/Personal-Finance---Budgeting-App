@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:personal_finance/core/resources/strings_manager.dart';
-import 'package:personal_finance/features/settings/presentation/view/widgets/budget_control_screen_body.dart';
+import 'package:budget_master/core/resources/strings_manager.dart';
+import 'package:budget_master/features/settings/presentation/view/widgets/budget_control_screen_body.dart';
 
 class BudgetControlScreen extends StatefulWidget {
   const BudgetControlScreen({super.key});

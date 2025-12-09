@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:personal_finance/features/budget/presentation/manager/budget_cubit.dart';
-import 'package:personal_finance/features/budget/presentation/manager/budget_state.dart';
-import 'package:personal_finance/core/resources/strings_manager.dart';
-import 'package:personal_finance/features/nav_bar/presentation/views/nav_bar.dart';
-import 'package:personal_finance/features/set_up_user/presentation/view/set_up_screen_view.dart';
-import 'package:personal_finance/features/settings/presentation/view/about_screen_view.dart';
-import 'package:personal_finance/features/settings/presentation/view/budget_control_screen_view.dart';
-import 'package:personal_finance/features/settings/presentation/view/add_category_screen.dart';
-import 'package:personal_finance/features/settings/presentation/view/category_screen.dart';
-import 'package:personal_finance/features/splash/presentation/splash_screen_view.dart';
+import 'package:budget_master/features/budget/presentation/manager/budget_cubit.dart';
+import 'package:budget_master/features/budget/presentation/manager/budget_state.dart';
+import 'package:budget_master/core/resources/strings_manager.dart';
+import 'package:budget_master/features/nav_bar/presentation/views/nav_bar.dart';
+import 'package:budget_master/features/set_up_user/presentation/view/set_up_screen_view.dart';
+import 'package:budget_master/features/settings/presentation/view/about_screen_view.dart';
+import 'package:budget_master/features/settings/presentation/view/budget_control_screen_view.dart';
+import 'package:budget_master/features/settings/presentation/view/add_category_screen.dart';
+import 'package:budget_master/features/settings/presentation/view/category_screen.dart';
+import 'package:budget_master/features/splash/presentation/splash_screen_view.dart';
 
 class Routes {
   static const String splashRoute = '/';

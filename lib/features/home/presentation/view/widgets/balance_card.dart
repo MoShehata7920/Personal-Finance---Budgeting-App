@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:personal_finance/core/resources/strings_manager.dart';
-import 'package:personal_finance/features/budget/data/models/budget_model.dart';
+import 'package:budget_master/core/resources/strings_manager.dart';
+import 'package:budget_master/features/budget/data/models/budget_model.dart';
 
 class BalanceCard extends StatelessWidget {
   final BudgetModel budget;

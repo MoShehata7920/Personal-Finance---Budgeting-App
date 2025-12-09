@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:personal_finance/core/app/shared_preferences.dart';
-import 'package:personal_finance/features/budget/data/models/budget_model.dart';
-import 'package:personal_finance/features/transactions/data/models/transactions_model.dart';
+import 'package:budget_master/core/app/shared_preferences.dart';
+import 'package:budget_master/features/budget/data/models/budget_model.dart';
+import 'package:budget_master/features/transactions/data/models/transactions_model.dart';
 import 'budget_state.dart';
 
 class BudgetCubit extends Cubit<BudgetState> {

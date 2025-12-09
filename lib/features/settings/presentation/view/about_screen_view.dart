@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:personal_finance/core/resources/strings_manager.dart';
-import 'package:personal_finance/features/settings/presentation/view/widgets/about_screen_body.dart';
+import 'package:budget_master/core/resources/strings_manager.dart';
+import 'package:budget_master/features/settings/presentation/view/widgets/about_screen_body.dart';
 
 class AboutScreen extends StatelessWidget {
   const AboutScreen({super.key});

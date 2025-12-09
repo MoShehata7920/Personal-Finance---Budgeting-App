@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:personal_finance/features/budget/data/models/budget_model.dart';
+import 'package:budget_master/features/budget/data/models/budget_model.dart';
 
 class BudgetProgress extends StatelessWidget {
   final BudgetModel budget;

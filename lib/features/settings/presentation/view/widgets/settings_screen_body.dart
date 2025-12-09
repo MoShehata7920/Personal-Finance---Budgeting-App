@@ -2,13 +2,13 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:personal_finance/core/resources/icons_manager.dart';
-import 'package:personal_finance/core/resources/routes_manager.dart';
-import 'package:personal_finance/core/resources/strings_manager.dart';
-import 'package:personal_finance/features/budget/presentation/manager/budget_cubit.dart';
-import 'package:personal_finance/features/settings/presentation/manager/theme_cubit.dart';
-import 'package:personal_finance/features/settings/presentation/view/widgets/settings_tile.dart';
-import 'package:personal_finance/features/set_up_user/presentation/manager/user_cubit.dart';
+import 'package:budget_master/core/resources/icons_manager.dart';
+import 'package:budget_master/core/resources/routes_manager.dart';
+import 'package:budget_master/core/resources/strings_manager.dart';
+import 'package:budget_master/features/budget/presentation/manager/budget_cubit.dart';
+import 'package:budget_master/features/settings/presentation/manager/theme_cubit.dart';
+import 'package:budget_master/features/settings/presentation/view/widgets/settings_tile.dart';
+import 'package:budget_master/features/set_up_user/presentation/manager/user_cubit.dart';
 
 class SettingsScreenBody extends StatelessWidget {
   const SettingsScreenBody({super.key});

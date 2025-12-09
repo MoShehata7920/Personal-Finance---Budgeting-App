@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:personal_finance/core/resources/strings_manager.dart';
-import 'package:personal_finance/features/budget/presentation/manager/budget_cubit.dart';
-import 'package:personal_finance/features/budget/presentation/manager/budget_state.dart';
-import 'package:personal_finance/features/settings/presentation/view/widgets/budget_category_widget.dart';
+import 'package:budget_master/core/resources/strings_manager.dart';
+import 'package:budget_master/features/budget/presentation/manager/budget_cubit.dart';
+import 'package:budget_master/features/budget/presentation/manager/budget_state.dart';
+import 'package:budget_master/features/settings/presentation/view/widgets/budget_category_widget.dart';
 
 class CategoryScreenBody extends StatelessWidget {
   const CategoryScreenBody({super.key});

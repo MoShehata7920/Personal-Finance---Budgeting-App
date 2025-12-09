@@ -1,4 +1,4 @@
-package com.example.personal_finance
+package com.torkydev.budget_master
 
 import io.flutter.embedding.android.FlutterActivity
 

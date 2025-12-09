@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:personal_finance/core/resources/assets_manager.dart';
-import 'package:personal_finance/core/resources/icons_manager.dart';
-import 'package:personal_finance/core/resources/strings_manager.dart';
-import 'package:personal_finance/core/services/functions.dart';
+import 'package:budget_master/core/resources/assets_manager.dart';
+import 'package:budget_master/core/resources/icons_manager.dart';
+import 'package:budget_master/core/resources/strings_manager.dart';
+import 'package:budget_master/core/services/functions.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AboutScreenBody extends StatelessWidget {

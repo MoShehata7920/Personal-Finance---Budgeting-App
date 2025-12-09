@@ -6,14 +6,14 @@
     [
       "C:\\Android\\cmake\\3.22.1\\bin\\ninja.exe",
       "-C",
-      "E:\\codes\\Flutter\\unfinished\\personal_finance\\android\\app\\.cxx\\Debug\\3f1l6o70\\arm64-v8a",
+      "E:\\codes\\Flutter\\unfinished\\budget_master\\android\\app\\.cxx\\Debug\\3f1l6o70\\arm64-v8a",
       "clean"
     ]
   ],
   "buildTargetsCommandComponents": [
     "C:\\Android\\cmake\\3.22.1\\bin\\ninja.exe",
     "-C",
-    "E:\\codes\\Flutter\\unfinished\\personal_finance\\android\\app\\.cxx\\Debug\\3f1l6o70\\arm64-v8a",
+    "E:\\codes\\Flutter\\unfinished\\budget_master\\android\\app\\.cxx\\Debug\\3f1l6o70\\arm64-v8a",
     "{LIST_OF_TARGETS_TO_BUILD}"
   ],
   "libraries": {}

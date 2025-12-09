@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:personal_finance/features/budget/presentation/manager/budget_cubit.dart';
-import 'package:personal_finance/features/budget/presentation/manager/budget_state.dart';
-import 'package:personal_finance/features/budget/presentation/view/widgets/budget_card.dart';
+import 'package:budget_master/features/budget/presentation/manager/budget_cubit.dart';
+import 'package:budget_master/features/budget/presentation/manager/budget_state.dart';
+import 'package:budget_master/features/budget/presentation/view/widgets/budget_card.dart';
 
 class BudgetScreenBody extends StatelessWidget {
   const BudgetScreenBody({super.key});

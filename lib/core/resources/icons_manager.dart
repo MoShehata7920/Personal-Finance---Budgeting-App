@@ -16,7 +16,7 @@ class AppIcons {
   static const camera = IconlyBroken.camera;
   static const category = IconlyBroken.category;
 
-  static List<IconData> categoriesIcons = [
+  static const List<IconData> categoriesIcons = [
     Icons.shopping_cart,
     Icons.fastfood,
     Icons.directions_car,

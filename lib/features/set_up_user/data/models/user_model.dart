@@ -1,5 +1,5 @@
-import 'package:personal_finance/core/resources/assets_manager.dart';
-import 'package:personal_finance/core/resources/strings_manager.dart';
+import 'package:budget_master/core/resources/assets_manager.dart';
+import 'package:budget_master/core/resources/strings_manager.dart';
 
 class UserModel {
   final String name;

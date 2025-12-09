@@ -151,7 +151,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "e:/codes/Flutter/my projects/personal_finance/android/app/.cxx/Debug/671e1x01/armeabi-v7a"
+			"value" : "e:/codes/Flutter/my projects/budget_master/android/app/.cxx/Debug/671e1x01/armeabi-v7a"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -751,7 +751,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "E:\\codes\\Flutter\\my projects\\personal_finance\\build\\app\\intermediates\\cxx\\Debug\\671e1x01\\obj\\armeabi-v7a"
+			"value" : "E:\\codes\\Flutter\\my projects\\budget_master\\build\\app\\intermediates\\cxx\\Debug\\671e1x01\\obj\\armeabi-v7a"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -1023,7 +1023,7 @@
 				}
 			],
 			"type" : "UNINITIALIZED",
-			"value" : "E:\\codes\\Flutter\\my projects\\personal_finance\\build\\app\\intermediates\\cxx\\Debug\\671e1x01\\obj\\armeabi-v7a"
+			"value" : "E:\\codes\\Flutter\\my projects\\budget_master\\build\\app\\intermediates\\cxx\\Debug\\671e1x01\\obj\\armeabi-v7a"
 		},
 		{
 			"name" : "CMAKE_SHARED_LINKER_FLAGS",
@@ -1331,7 +1331,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "E:/codes/Flutter/my projects/personal_finance/android/app/.cxx/Debug/671e1x01/armeabi-v7a"
+			"value" : "E:/codes/Flutter/my projects/budget_master/android/app/.cxx/Debug/671e1x01/armeabi-v7a"
 		},
 		{
 			"name" : "Project_IS_TOP_LEVEL",

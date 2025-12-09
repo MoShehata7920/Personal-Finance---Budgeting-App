@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:personal_finance/core/app/shared_preferences.dart';
-import 'package:personal_finance/core/resources/routes_manager.dart';
-import 'package:personal_finance/features/splash/presentation/widgets/splash_screen_body.dart';
+import 'package:budget_master/core/app/shared_preferences.dart';
+import 'package:budget_master/core/resources/routes_manager.dart';
+import 'package:budget_master/features/splash/presentation/widgets/splash_screen_body.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

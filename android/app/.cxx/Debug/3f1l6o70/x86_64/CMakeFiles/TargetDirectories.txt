@@ -1,2 +1,2 @@
-E:/codes/Flutter/unfinished/personal_finance/android/app/.cxx/Debug/3f1l6o70/x86_64/CMakeFiles/edit_cache.dir
-E:/codes/Flutter/unfinished/personal_finance/android/app/.cxx/Debug/3f1l6o70/x86_64/CMakeFiles/rebuild_cache.dir
+E:/codes/Flutter/unfinished/budget_master/android/app/.cxx/Debug/3f1l6o70/x86_64/CMakeFiles/edit_cache.dir
+E:/codes/Flutter/unfinished/budget_master/android/app/.cxx/Debug/3f1l6o70/x86_64/CMakeFiles/rebuild_cache.dir

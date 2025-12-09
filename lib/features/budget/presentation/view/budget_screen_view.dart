@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:personal_finance/core/resources/strings_manager.dart';
-import 'package:personal_finance/core/widgets/banner_ads.dart';
-import 'package:personal_finance/features/budget/presentation/view/widgets/budget_screen_body.dart';
+import 'package:budget_master/core/resources/strings_manager.dart';
+import 'package:budget_master/core/widgets/banner_ads.dart';
+import 'package:budget_master/features/budget/presentation/view/widgets/budget_screen_body.dart';
 
 class BudgetScreen extends StatelessWidget {
   const BudgetScreen({super.key});

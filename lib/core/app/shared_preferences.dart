@@ -2,10 +2,10 @@ import 'dart:convert';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'package:personal_finance/features/budget/data/models/budget_model.dart';
-import 'package:personal_finance/features/set_up_user/data/models/user_model.dart';
-import 'package:personal_finance/core/resources/assets_manager.dart';
-import 'package:personal_finance/core/resources/strings_manager.dart';
+import 'package:budget_master/features/budget/data/models/budget_model.dart';
+import 'package:budget_master/features/set_up_user/data/models/user_model.dart';
+import 'package:budget_master/core/resources/assets_manager.dart';
+import 'package:budget_master/core/resources/strings_manager.dart';
 
 class SharedPreferencesHelper {
   static const String userKey = 'userData';

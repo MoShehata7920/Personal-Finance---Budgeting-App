@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:personal_finance/features/budget/data/models/budget_model.dart';
+import 'package:budget_master/features/budget/data/models/budget_model.dart';
 
 abstract class BudgetState extends Equatable {
   @override

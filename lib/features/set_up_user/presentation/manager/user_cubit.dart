@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
-import 'package:personal_finance/core/app/shared_preferences.dart';
-import 'package:personal_finance/features/set_up_user/data/models/user_model.dart';
-import 'package:personal_finance/core/resources/assets_manager.dart';
-import 'package:personal_finance/core/resources/strings_manager.dart';
+import 'package:budget_master/core/app/shared_preferences.dart';
+import 'package:budget_master/features/set_up_user/data/models/user_model.dart';
+import 'package:budget_master/core/resources/assets_manager.dart';
+import 'package:budget_master/core/resources/strings_manager.dart';
 
 class UserCubit extends Cubit<UserModel> {
   UserCubit()

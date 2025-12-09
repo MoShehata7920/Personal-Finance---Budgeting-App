@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:personal_finance/features/nav_bar/presentation/manager/bottom_nav_cubit.dart';
-import 'package:personal_finance/features/nav_bar/presentation/manager/bottom_nav_state.dart';
-import 'package:personal_finance/core/resources/icons_manager.dart';
-import 'package:personal_finance/core/resources/strings_manager.dart';
-import 'package:personal_finance/features/budget/presentation/view/budget_screen_view.dart';
-import 'package:personal_finance/features/home/presentation/view/home_screen_view.dart';
-import 'package:personal_finance/features/settings/presentation/view/settings_screen_view.dart';
-import 'package:personal_finance/features/transactions/presentation/view/transactions_screen_view.dart';
+import 'package:budget_master/features/nav_bar/presentation/manager/bottom_nav_cubit.dart';
+import 'package:budget_master/features/nav_bar/presentation/manager/bottom_nav_state.dart';
+import 'package:budget_master/core/resources/icons_manager.dart';
+import 'package:budget_master/core/resources/strings_manager.dart';
+import 'package:budget_master/features/budget/presentation/view/budget_screen_view.dart';
+import 'package:budget_master/features/home/presentation/view/home_screen_view.dart';
+import 'package:budget_master/features/settings/presentation/view/settings_screen_view.dart';
+import 'package:budget_master/features/transactions/presentation/view/transactions_screen_view.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({super.key});

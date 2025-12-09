@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:personal_finance/core/resources/assets_manager.dart';
-import 'package:personal_finance/core/resources/strings_manager.dart';
-import 'package:personal_finance/core/services/animation.dart';
-import 'package:personal_finance/core/services/utils.dart';
+import 'package:budget_master/core/resources/assets_manager.dart';
+import 'package:budget_master/core/resources/strings_manager.dart';
+import 'package:budget_master/core/services/animation.dart';
+import 'package:budget_master/core/services/utils.dart';
 
 class SplashScreenBody extends StatelessWidget {
   const SplashScreenBody({super.key});
