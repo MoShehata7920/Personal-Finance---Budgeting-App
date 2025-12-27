@@ -17,7 +17,7 @@ class AddCategoryScreen extends StatelessWidget {
     return BlocProvider(
       create: (_) => CategoryCubit(),
       child: BlocBuilder<CategoryCubit, int?>(
-        builder: (context, selectedIconCode) {
+        builder: (context, selectedIconIndex) {
           return Scaffold(
             appBar: AppBar(title: const Text(AppStrings.addCategory)),
             body: Padding(
@@ -42,14 +42,13 @@ class AddCategoryScreen extends StatelessWidget {
                       itemCount: AppIcons.categoriesIcons.length,
                       itemBuilder: (context, index) {
                         final iconData = AppIcons.categoriesIcons[index];
-                        final isSelected =
-                            selectedIconCode == iconData.codePoint;
+                        final isSelected = selectedIconIndex == index;
 
                         return GestureDetector(
                           onTap: () {
                             context
                                 .read<CategoryCubit>()
-                                .selectIcon(iconData.codePoint);
+                                .selectIcon(index);
                           },
                           child: Container(
                             decoration: BoxDecoration(
@@ -66,15 +65,15 @@ class AddCategoryScreen extends StatelessWidget {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      final selectedIcon = context.read<CategoryCubit>().state;
+                      final selectedIndex = context.read<CategoryCubit>().state;
 
                       if (nameController.text.isNotEmpty &&
-                          selectedIcon != null) {
+                          selectedIndex != null) {
                         final newCategory = CategoryBudget(
                           name: nameController.text,
                           totalAmount: 0,
                           spentAmount: 0,
-                          iconCode: selectedIcon,
+                          iconIndex: selectedIndex,
                         );
 
                         onCategoryAdded(newCategory);

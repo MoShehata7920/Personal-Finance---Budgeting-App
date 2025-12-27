@@ -1,3 +1,4 @@
+import 'package:budget_master/core/resources/routes_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:budget_master/core/resources/strings_manager.dart';
@@ -25,6 +26,23 @@ class _TransactionsScreenBodyState extends State<TransactionsScreenBody> {
       child: BlocBuilder<BudgetCubit, BudgetState>(
         builder: (context, state) {
           if (state is BudgetLoaded) {
+            if (state.budget.categories.isEmpty) {
+              return Center(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                        "No categories found. Add one to start tracking!"),
+                    ElevatedButton(
+                      onPressed: () =>
+                          Navigator.pushNamed(context, Routes.addCategoryRoute),
+                      child: const Text("Create First Category"),
+                    ),
+                  ],
+                ),
+              );
+            }
             return _buildTransactionsUI(state);
           } else if (state is BudgetError) {
             return Center(child: Text(state.message));
